@@ -1,36 +1,18 @@
 package find;
 
-import java.util.Arrays;
-
 /**
  * Created by ying on 2018/4/27.
  */
 public class Find {
-
-
-        public static void main(String[] args) {
-            int[] a1 = { 1, 2, 3, 4, 5 };
-            int[ ] a2;
-            a2 = a1;
-            for(int i = 0; i < a2.length; i++)
-                a2[i]++;
-            for(int i = 0; i < a1.length; i++)
-                prt("a1[" + i + "] = " + a1[i]);
-        }
-        static void prt(String s) {
-            System.out.println(s);
-        }
-
-
-  /*  public static void main(String[] args) {
-       *//* int[] nums ={1,2,3,4,5,6,7,8,9,10,11,12,13};
-        System.out.println(binary(nums,0,nums.length-1,10));*//*
+    public static void main(String[] args) {
+     /*   int[] nums ={1,2,3,4,5,6,7,8,9,10,11,12,13};
+        System.out.println(binary(nums,0,nums.length-1,10));*/
 //       返回第i小的元素
-   *//*     int[] nums = {3, 9, 10, 6, 8, 16, 36};
-        System.out.println(randomizedSelectCycle(nums, 0, nums.length - 1, 7));*//*
+       /* int[] nums = {3, 9, 10, 6, 8, 16, 36};
+        System.out.println(randomizedSelectCycle(nums, 0, nums.length - 1, 7));*/
         int[] nums = {3, 9, 10, 6, 8, 36, 16};
         System.out.println(select(nums, 0, nums.length - 1, 7));
-    }*/
+    }
 
     //    二分查找
     public static int binary(int nums[], int left, int right, int target) {
