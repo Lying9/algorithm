@@ -5,6 +5,7 @@ package basicdatastructure.tree;
  */
 public class Test {
     public static void main(String[] args) {
+
 //        BinarySearchTree tree = new BinarySearchTree();
    /*     tree.insert(6);
         tree.insert(5);
