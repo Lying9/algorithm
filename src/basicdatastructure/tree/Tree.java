@@ -122,6 +122,8 @@ public class Tree {
         Node<E> p;
         Node<E> left;
         Node<E> right;
+        //        红黑树的颜色，0表示黑色，1表示红色
+        byte color;
 
         public Node() {
 
@@ -132,6 +134,7 @@ public class Tree {
             this.p = null;
             this.left = null;
             this.right = null;
+            this.color = 1; //默认红色
         }
     }
 }
