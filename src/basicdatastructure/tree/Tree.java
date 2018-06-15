@@ -17,7 +17,7 @@ public class Tree {
 
     private void preorder(Node node) {
         if (node != null) {
-            System.out.print(node.key + "\t");
+            System.out.print(node.key + "["+node.color+"]"+"\t");
             preorder(node.left);
             preorder(node.right);
         }

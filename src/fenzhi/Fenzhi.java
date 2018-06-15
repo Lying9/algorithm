@@ -1,6 +1,4 @@
-package fenzhipartfour;
-
-import java.util.Arrays;
+package fenzhi;
 
 /**
  * Created by ying on 2018/5/6.

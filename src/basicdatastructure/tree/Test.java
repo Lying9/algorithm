@@ -1,5 +1,8 @@
 package basicdatastructure.tree;
 
+import java.util.Hashtable;
+import java.util.Vector;
+
 /**
  * Created by ying on 2018/6/1.
  */
@@ -30,24 +33,31 @@ public class Test {
         System.out.println(tree.successor(tree.search(tree.root,2)));
         System.out.println(tree.successor(tree.search(tree.root,6)));*/
 //       删除测试
-       /* tree.insert(12);
-        tree.insert(5);
+/*        tree.insert(12);
+//        tree.insert(5);
         tree.insert(18);
-        tree.insert(2);
-        tree.insert(9);
+//        tree.insert(2);
+//        tree.insert(9);
         tree.insert(15);
-        tree.insert(19);
+//        tree.insert(19);
         tree.insert(13);
         tree.insert(17);
-        tree.delete(tree.search(tree.root,13));
-        tree.delete(tree.search(tree.root,15));
-        tree.delete(tree.search(tree.root,12));*/
+        tree.delete(tree.search(tree.root,12));
+        tree.delete(tree.search(tree.root,18));
+//        tree.delete(tree.search(tree.root,12));*/
 
 //       红黑树测试
         RedBlackTree rb = new RedBlackTree();
-       int[] nums = {11,2,14,7,8,15,5,4,1};
+        int[] nums = {12, 1, 9, 2, 0, 11, 7, 19, 4, 15, 18, 5, 14, 13, 10, 16, 6, 3, 8, 17};
         for (int i = 0; i < nums.length; i++) {
             rb.insert(nums[i]);
+        }
+        int[] deletenum = {12, 1, 9, 2, 0, 11, 7, 19, 4, 15, 18, 5, 14, 13, 10, 16, 6, 3, 8, 17};
+        for (int i = 0; i < deletenum.length; i++) {
+            rb.delete(rb.search(rb.root, deletenum[i]));
+//            rb.preorderTreeWalk();
+            rb.cengciTreeWalk();
+            System.out.println();
         }
     }
 }

@@ -47,6 +47,7 @@ public class BinarySearchTree extends Tree {
                 z.key = y.key;
                 transplant(y, y.right);
             }*/
+//           y可能是z的右孩子也可能不是z的右孩子
            if(y.p!=z){
                transplant(y,y.right);
                y.right = z.right;
