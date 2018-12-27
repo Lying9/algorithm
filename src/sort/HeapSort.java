@@ -55,10 +55,12 @@ public class HeapSort {
         System.out.println("插入关键字：" + Arrays.toString(nums));*/
 
 //    合并k个有序链表
+/*
         int[] num1 = {2,4,6,7,12,15,17,29};
         int[] num2 = {3,6,8,15,25};
         int[] num3 = {3,7,9,12,15,17,19,25};
         merge_k(num1,num2,num3);
+*/
 
     }
 
@@ -312,7 +314,7 @@ public class HeapSort {
 
 
     /**
-     * 建立最小堆
+     * 建立最小堆   时间复杂度为o(n)
      */
     public static void build_min_heap(int[] nums) {
         int leaf = nums[0] / 2;
