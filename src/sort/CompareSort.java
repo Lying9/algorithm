@@ -25,8 +25,8 @@ public class CompareSort {
         quicksort(nums, 0, nums.length - 1);
         System.out.println(Arrays.toString(nums));*/
 //        习题7-2 b
-        int[] nums = {2, 6, 7, 6, 3, 5, 8, 6, 6};
-        int[] result = partition_2(nums, 0, nums.length - 1);
+        int[] nums = {2,6,7,6,3,5,8,6,6};
+        int[] result = partition_2(nums,0,nums.length-1);
         System.out.println(Arrays.toString(result));
         System.out.println(Arrays.toString(nums));
 
@@ -234,7 +234,7 @@ public class CompareSort {
         int q;
         if (p < r) {
 //            q = partition(nums, p, r);
-            q = hoare_partition(nums, p, r);
+            q = hoare_partition(nums,p,r);
             quicksort(nums, p, q - 1);
             quicksort(nums, q + 1, r);
         }
@@ -263,8 +263,7 @@ public class CompareSort {
     private static int[] partition_2(int[] nums, int p, int r) {
         int[] result = new int[2];
 //        选择nums[r]作为标兵
-        int x = nums[r];
-        int count = 0;
+        int x = nums[r];int count = 0;
         int i = p - 1;  //i：i之前（包括i）的数都是小于标兵的
         for (int j = i + 1; j < r; j++) {
             if (nums[j] < x) {
@@ -275,14 +274,14 @@ public class CompareSort {
                 nums[j] = temp;
             }
         }
-        result[0] = i + 1;
+        result[0] = i+1;
         int temp = nums[i + 1];
         nums[i + 1] = nums[r];
         nums[r] = temp;
         i++;
         int t;
-        for (t = i + 1; t <= r; t++) {
-            if (nums[t] == x) {
+        for (t= i+1;  t<= r; t++) {
+            if(nums[t] == x){
                 i++;
                 temp = nums[i];
                 nums[i] = nums[t];
@@ -293,82 +292,22 @@ public class CompareSort {
         return result;
     }
 
-    public static int hoare_partition(int[] nums, int p, int r) {
+    public static int hoare_partition(int[] nums,int p,int r){
         int x = nums[p];
         int i = p;
         int j = r;
-        while (true) {
-            while (nums[j] > x)
+        while(true){
+            while(nums[j] > x)
                 j--;
-            while (nums[i] < x)
+            while(nums[i] < x)
                 i++;
-            if (i < j) {
+            if(i<j){
 //                交换 i j
                 int temp = nums[i];
                 nums[i] = nums[j];
                 nums[j] = temp;
-            } else
+            }else
                 return j;
         }
-    }
-
-    //    希尔排序
-    public static void shell(int[] a) {
-        int dk = a.length / 2;
-        while (dk >= 1) {
-            shellInsertsort(a, a.length, dk);
-            dk = dk / 2;
-        }
-    }
-
-    public static void shellInsertsort(int a[], int n, int dk) {
-        for (int i = dk; i < n; i++) {
-            if (a[i] < a[i - dk]) {
-                int x = a[i];
-                int j = i - dk;
-                while (j >= 0 && x < a[j]) {
-                    a[j + dk] = a[j];
-                    j -= dk;
-                }
-                a[j + dk] = x;
-            }
-        }
-    }
-
-
-    //    二元选择排序   一趟排序找出最大和最小值
-    public static void selectSort(int r[], int n) {
-        int i, j, min, max, temp;
-        for (i = 0; i < n / 2; i++) {
-            // 做不超过n/2趟选择排序
-            min = i;
-            max = i; //分别记录最大和最小关键字记录位置
-            for (j = i + 1; j <= n - i - 1; j++) {
-                if (r[j] > r[max]) {
-                    max = j;
-                    continue;
-                }
-                if (r[j] < r[min]) {
-                    min = j;
-                }
-            }
-//            最小值是否已经在正确的位置上了
-            if (min != i) {
-                temp = r[min];
-                r[min] = r[i];
-                r[i] = temp;
-            }
-//            可能出现最大值存储在r[i]的位置经过前面的变换，最大值换到了r[min]的位置
-            if (max == i)
-                max = min;
-//            最大值是否已经在正确的位置上
-            if (max != n - i - 1) {
-                temp = r[max];
-                r[max] = r[n - i - 1];
-                r[n - i - 1] = temp;
-            }
-
-        }
-
     }
 }
